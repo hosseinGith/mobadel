@@ -19,11 +19,51 @@
   user-select: none;
 }
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
   background: var(--background-body);
   font-family: vazir;
+}
+.content{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header{
+  background-color: #00a2ff42;
+}
+nav ul{
+  width: 280px;
+  margin: 0 auto;
+  padding: 10px 0;
+  position: relative;
+}
+
+nav ul span {
+  width: 150px;
+  border:3px solid #ff411f;
+  bottom: 7px;
+  right: 10px;
+  position: absolute;
+  transition: all .3s;
+}
+nav ul.active span{
+  width: 84px;
+  transform: translateX(-173px);
+} 
+nav ul li{
+  display: inline-block;
+  margin: 0 10px;
+}
+nav ul li button{
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: vazir;
+  border: 0;
+}
+
+nav ul li button.active{
+  
 }
 main {
   width: 100%;
@@ -46,6 +86,7 @@ main {
   display: none;
   white-space: nowrap;
   position: fixed;
+  overflow: hidden;
   background-color: var(--alert);
   color: var(--color);
 }
@@ -82,17 +123,20 @@ main {
 .answerUnitText.active {
   display: flex;
 }
-.unitContainer {
+.metrContainer {
   max-width: 800px;
   padding: 10px 10px;
   font-size: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   background-color: var(--contents-backgroundColor);
   color: var(--color);
   font-family: vazir;
+}
+.metrContainer.active {
+  display: flex;
 }
 .inputsUnit {
   width: 100%;
@@ -136,7 +180,7 @@ main {
   box-shadow: 0 0 10px #000;
 }
 
-.unitContainer button {
+.answerBtn {
   padding: 10px 20px;
   border-radius: 20px;
   border: 0;
@@ -146,10 +190,10 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.unitContainer button:hover {
+.answerBtn:hover {
   box-shadow: 0 0 15px 2px #00000086;
 }
-.unitContainer button:active {
+.answerBtn:active {
   box-shadow: 0 0 10px #000000c2;
   transition: all 0.001s;
 }
@@ -157,4 +201,36 @@ main {
   .inputsUnit {
     flex-direction: column;
   }
+}
+.kGContainer {
+  max-width: 800px;
+  padding: 10px 10px;
+  font-size: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--contents-backgroundColor);
+  color: var(--color);
+  font-family: vazir;
+}
+.kGContainer.active {
+  display: flex;
+}
+.answerBtnKG {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 0;
+  background: var(--color);
+  font-size: 20px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.answerBtnKG:hover {
+  box-shadow: 0 0 15px 2px #00000086;
+}
+.answerBtnKG:active {
+  box-shadow: 0 0 10px #000000c2;
+  transition: all 0.001s;
 }

@@ -9,51 +9,94 @@
   </head>
 
   <body>
-    <header></header>
-    <main>
-      <section>
-        <div class="container alert">
-          <p>دقت کن!! نباید دو تا واحد مثل هم باشن</p>
+    <div class="content">
+      <header>
+        <div class="container">
+          <nav>
+            <ul>
+              <span></span>
+              <li>
+                <button class="SKM">سانتی متر تا کیلومتر</button>
+              </li>
+              <li>
+                <button class="KG">گرم تا طن</button>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </section>
-      <section>
-        <div class="answerUnitContainer container">
-          <div class="answerUnitText">
-            <p>برابر با :</p>
-            <span class="answerUnit"></span>
+      </header>
+      <main>
+        <section>
+          <div class="container alert">
+            <p>دقت کن!! نباید دو تا واحد مثل هم باشن</p>
           </div>
-        </div>
-      </section>
-      <section>
-        <div class="unitContainer container">
-          <div class="inputsUnit">
-            <div class="unitValue">
-              <label for="unitValueInput">مقدار تبدیل:</label>
-              <input type="number" id="unitValueInput" />
-            </div>
-            <div class="fromUnitContainer">
-              <label for="fromUnit">تبدیل از:</label>
-              <select id="fromUnit">
-                <option value="0">میلی متر</option>
-                <option value="1">سانتی متر</option>
-                <option value="2">متر</option>
-                <option value="3">کیلومتر</option>
-              </select>
-            </div>
-            <div class="toUnitContainer">
-              <label for="toUnit">تبدیل به:</label>
-              <select id="toUnit">
-                <option value="0">میلی متر</option>
-                <option value="1">سانتی متر</option>
-                <option value="2">متر</option>
-                <option value="3">کیلومتر</option>
-              </select>
+        </section>
+        <section>
+          <div class="answerUnitContainer container ">
+            <div class="answerUnitText">
+              <p>برابر با :</p>
+              <span class="answerUnit"></span>
             </div>
           </div>
-          <button class="answerBtn">محاسبه</button>
-        </div>
-      </section>
-    </main>
+        </section>
+        <section>
+          <div class="metrContainer container active">
+            <div class="inputsUnit">
+              <div class="unitValue">
+                <label for="unitValueInput">مقدار تبدیل:</label>
+                <input type="number" id="unitValueInput" />
+              </div>
+              <div class="fromUnitContainer">
+                <label for="fromUnit">تبدیل از:</label>
+                <select id="fromUnit">
+                  <option value="0">میلی متر</option>
+                  <option value="1">سانتی متر</option>
+                  <option value="2">متر</option>
+                  <option value="3">کیلومتر</option>
+                  <option value="4">مایل</option>
+                </select>
+              </div>
+              <div class="toUnitContainer">
+                <label for="toUnit">تبدیل به:</label>
+                <select id="toUnit">
+                  <option value="0">میلی متر</option>
+                  <option value="1">سانتی متر</option>
+                  <option value="2">متر</option>
+                  <option value="3">کیلومتر</option>
+                  <option value="4">مایل</option>
+                </select>
+              </div>
+            </div>
+            <button class="answerBtn">محاسبه</button>
+          </div>
+          <div class="kGContainer container ">
+            <div class="inputsUnit">
+              <div class="unitValue">
+                <label for="unitValueInput">مقدار تبدیل:</label>
+                <input type="number" id="kGValueInput" />
+              </div>
+              <div class="fromUnitContainer">
+                <label for="fromUnitKG">تبدیل از:</label>
+                <select id="fromUnitKG">
+                  <option value="0" selected>گرم</option>
+                  <option value="1">مثقال</option>
+                  <option value="2">کیلو گرم</option>
+                </select>
+              </div>
+              <div class="toUnitContainer">
+                <label for="toUnitKg">تبدیل به:</label>
+                <select id="toUnitKg">
+                  <option value="0">گرم</option>
+                  <option value="1" selected>مثقال</option>
+                  <option value="2">کیلو گرم</option>
+                </select>
+              </div>
+            </div>
+            <button class="answerBtnKG">محاسبه</button>
+          </div>
+        </section>
+      </main>
+    </div>
     <script src="scripts/script.js"></script>
   </body>
 </html>
