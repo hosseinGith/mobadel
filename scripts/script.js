@@ -50,6 +50,12 @@ answerBtn.addEventListener("click", () => {
       unitValueInput.value / 1000000 +
       ` ${toUnit.children[toUnit.value].textContent}`;
   }
+  if (fromUnit.value == 0 && toUnit.value == 4) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      unitValueInput.value / 1609343.9999672 +
+      ` ${toUnit.children[toUnit.value].textContent}`;
+  }
   if (fromUnit.value == 1 && toUnit.value == 0) {
     answerUnitText.classList.add("active");
     answerUnitText.querySelector("span").textContent =
@@ -68,6 +74,12 @@ answerBtn.addEventListener("click", () => {
       unitValueInput.value / 100000 +
       ` ${toUnit.children[toUnit.value].textContent}`;
   }
+  if (fromUnit.value == 1 && toUnit.value == 4) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      unitValueInput.value / 160934.39999672 +
+      ` ${toUnit.children[toUnit.value].textContent}`;
+  }
   if (fromUnit.value == 2 && toUnit.value == 0) {
     answerUnitText.classList.add("active");
     answerUnitText.querySelector("span").textContent =
@@ -84,6 +96,12 @@ answerBtn.addEventListener("click", () => {
     answerUnitText.classList.add("active");
     answerUnitText.querySelector("span").textContent =
       unitValueInput.value / 1000 +
+      ` ${toUnit.children[toUnit.value].textContent}`;
+  }
+  if (fromUnit.value == 2 && toUnit.value == 4) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      unitValueInput.value / 1609.3439999672 +
       ` ${toUnit.children[toUnit.value].textContent}`;
   }
   if (fromUnit.value == 3 && toUnit.value == 0) {
@@ -108,17 +126,31 @@ answerBtn.addEventListener("click", () => {
     answerUnitText.classList.add("active");
     let colact = unitValueInput.value / 1.6093439999672;
     answerUnitText.querySelector("span").textContent =
-      "..." +
-      colact.toFixed(2) +
-      ` ${toUnit.children[toUnit.value].textContent}`;
+      colact + ` ${toUnit.children[toUnit.value].textContent}`;
+  }
+  if (fromUnit.value == 4 && toUnit.value == 0) {
+    answerUnitText.classList.add("active");
+    let colact = unitValueInput.value * 1609343.9999672;
+    answerUnitText.querySelector("span").textContent =
+      colact + ` ${toUnit.children[toUnit.value].textContent}`;
+  }
+  if (fromUnit.value == 4 && toUnit.value == 1) {
+    answerUnitText.classList.add("active");
+    let colact = unitValueInput.value * 160934.39999672;
+    answerUnitText.querySelector("span").textContent =
+      colact + ` ${toUnit.children[toUnit.value].textContent}`;
+  }
+  if (fromUnit.value == 4 && toUnit.value == 2) {
+    answerUnitText.classList.add("active");
+    let colact = unitValueInput.value * 1609.3439999672;
+    answerUnitText.querySelector("span").textContent =
+      colact + ` ${toUnit.children[toUnit.value].textContent}`;
   }
   if (fromUnit.value == 4 && toUnit.value == 3) {
     answerUnitText.classList.add("active");
     let colact = unitValueInput.value * 1.6093439999672;
     answerUnitText.querySelector("span").textContent =
-      "..." +
-      colact.toFixed(2) +
-      ` ${toUnit.children[toUnit.value].textContent}`;
+      colact + ` ${toUnit.children[toUnit.value].textContent}`;
   }
 });
 changeModeSKM.addEventListener("click", () => {
@@ -155,6 +187,12 @@ answerBtnKG.addEventListener("click", () => {
       kGValueInput.value / 1000 +
       ` ${toUnitKg.children[toUnitKg.value].textContent}`;
   }
+  if (fromUnitKG.value == 0 && toUnitKg.value == 3) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      kGValueInput.value / 1000000 +
+      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  }
   if (fromUnitKG.value == 1 && toUnitKg.value == 0) {
     answerUnitText.classList.add("active");
     answerUnitText.querySelector("span").textContent =
@@ -167,6 +205,12 @@ answerBtnKG.addEventListener("click", () => {
       kGValueInput.value / 217.0138888888889 +
       ` ${toUnitKg.children[toUnitKg.value].textContent}`;
   }
+  if (fromUnitKG.value == 1 && toUnitKg.value == 3) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      kGValueInput.value / 217013.8888888889 +
+      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  }
   if (fromUnitKG.value == 2 && toUnitKg.value == 0) {
     answerUnitText.classList.add("active");
     answerUnitText.querySelector("span").textContent =
@@ -177,6 +221,30 @@ answerBtnKG.addEventListener("click", () => {
     answerUnitText.classList.add("active");
     answerUnitText.querySelector("span").textContent =
       kGValueInput.value * 217.0138888888889 +
+      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  }
+  if (fromUnitKG.value == 2 && toUnitKg.value == 3) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      kGValueInput.value / 1000 +
+      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  }
+  if (fromUnitKG.value == 3 && toUnitKg.value == 0) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      kGValueInput.value * 1000000 +
+      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  }
+  if (fromUnitKG.value == 3 && toUnitKg.value == 1) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      kGValueInput.value * 217013.8888888889 +
+      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  }
+  if (fromUnitKG.value == 3 && toUnitKg.value == 2) {
+    answerUnitText.classList.add("active");
+    answerUnitText.querySelector("span").textContent =
+      kGValueInput.value * 1000 +
       ` ${toUnitKg.children[toUnitKg.value].textContent}`;
   }
 });
