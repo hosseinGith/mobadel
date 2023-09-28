@@ -24,6 +24,11 @@ function removeActiveFromAlert(input = fromUnit.value, input2 = toUnit.value) {
     return alertDiv.classList.add("active");
   }
 }
+function condationTrue(operation, toUnit) {
+  answerUnitText.classList.add("active");
+  answerUnitText.querySelector("span").textContent =
+    operation + ` ${toUnit.children[toUnit.value].textContent}`;
+}
 fromUnit.addEventListener("change", () => {
   removeActiveFromAlert();
 });
@@ -32,125 +37,85 @@ toUnit.addEventListener("change", () => {
 });
 answerBtn.addEventListener("click", () => {
   removeActiveFromAlert();
-  if (fromUnit.value == 0 && toUnit.value == 1) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 10 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
+  if (fromUnit.value == 0) {
+    switch (Number(toUnit.value)) {
+      case 1:
+        condationTrue(unitValueInput.value / 10, toUnit);
+        break;
+      case 2:
+        condationTrue(unitValueInput.value / 1000, toUnit);
+        break;
+      case 3:
+        condationTrue(unitValueInput.value / 1000000, toUnit);
+        break;
+      case 4:
+        condationTrue(unitValueInput.value / 1609343.9999672, toUnit);
+        break;
+    }
   }
-  if (fromUnit.value == 0 && toUnit.value == 2) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 1000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
+  if (fromUnit.value == 1) {
+    switch (Number(toUnit.value)) {
+      case 0:
+        condationTrue(unitValueInput.value * 10, toUnit);
+        break;
+      case 2:
+        condationTrue(unitValueInput.value / 100, toUnit);
+        break;
+      case 3:
+        condationTrue(unitValueInput.value / 100000, toUnit);
+        break;
+      case 4:
+        condationTrue(unitValueInput.value / 160934.39999672, toUnit);
+        break;
+    }
   }
-  if (fromUnit.value == 0 && toUnit.value == 3) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 1000000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
+  if (fromUnit.value == 2) {
+    switch (Number(toUnit.value)) {
+      case 0:
+        condationTrue(unitValueInput.value * 1000, toUnit);
+        break;
+      case 1:
+        condationTrue(unitValueInput.value * 100, toUnit);
+        break;
+      case 3:
+        condationTrue(unitValueInput.value / 1000, toUnit);
+        break;
+      case 4:
+        condationTrue(unitValueInput.value / 1609.3439999672, toUnit);
+        break;
+    }
   }
-  if (fromUnit.value == 0 && toUnit.value == 4) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 1609343.9999672 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
+  if (fromUnit.value == 3) {
+    switch (Number(toUnit.value)) {
+      case 0:
+        condationTrue(unitValueInput.value * 1000000, toUnit);
+        break;
+      case 1:
+        condationTrue(unitValueInput.value * 100000, toUnit);
+        break;
+      case 2:
+        condationTrue(unitValueInput.value * 1000, toUnit);
+        break;
+      case 4:
+        condationTrue(unitValueInput.value / 1.6093439999672, toUnit);
+        break;
+    }
   }
-  if (fromUnit.value == 1 && toUnit.value == 0) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value * 10 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 1 && toUnit.value == 2) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 100 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 1 && toUnit.value == 3) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 100000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 1 && toUnit.value == 4) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 160934.39999672 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 2 && toUnit.value == 0) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value * 1000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 2 && toUnit.value == 1) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value * 100 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 2 && toUnit.value == 3) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 1000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 2 && toUnit.value == 4) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value / 1609.3439999672 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 3 && toUnit.value == 0) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value * 1000000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 3 && toUnit.value == 1) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value * 100000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 3 && toUnit.value == 2) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      unitValueInput.value * 1000 +
-      ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 3 && toUnit.value == 4) {
-    answerUnitText.classList.add("active");
-    let colact = unitValueInput.value / 1.6093439999672;
-    answerUnitText.querySelector("span").textContent =
-      colact + ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 4 && toUnit.value == 0) {
-    answerUnitText.classList.add("active");
-    let colact = unitValueInput.value * 1609343.9999672;
-    answerUnitText.querySelector("span").textContent =
-      colact + ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 4 && toUnit.value == 1) {
-    answerUnitText.classList.add("active");
-    let colact = unitValueInput.value * 160934.39999672;
-    answerUnitText.querySelector("span").textContent =
-      colact + ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 4 && toUnit.value == 2) {
-    answerUnitText.classList.add("active");
-    let colact = unitValueInput.value * 1609.3439999672;
-    answerUnitText.querySelector("span").textContent =
-      colact + ` ${toUnit.children[toUnit.value].textContent}`;
-  }
-  if (fromUnit.value == 4 && toUnit.value == 3) {
-    answerUnitText.classList.add("active");
-    let colact = unitValueInput.value * 1.6093439999672;
-    answerUnitText.querySelector("span").textContent =
-      colact + ` ${toUnit.children[toUnit.value].textContent}`;
+  if (fromUnit.value == 4) {
+    switch (Number(toUnit.value)) {
+      case 0:
+        condationTrue(unitValueInput.value * 1609343.9999672, toUnit);
+        break;
+      case 1:
+        condationTrue(unitValueInput.value * 160934.39999672, toUnit);
+        break;
+      case 2:
+        condationTrue(unitValueInput.value * 1609.3439999672, toUnit);
+        break;
+      case 3:
+        condationTrue(unitValueInput.value * 1.6093439999672, toUnit);
+        break;
+    }
   }
 });
 changeModeSKM.addEventListener("click", () => {
@@ -175,76 +140,57 @@ toUnitKg.addEventListener("change", () => {
 });
 answerBtnKG.addEventListener("click", () => {
   removeActiveFromAlert(fromUnitKG.value, toUnitKg.value);
-  if (fromUnitKG.value == 0 && toUnitKg.value == 1) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value / 4.608 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  if (fromUnitKG.value == 0) {
+    console.log("toUnitKg.value: ", toUnitKg.value);
+    switch (Number(toUnitKg.value)) {
+      case 1:
+        condationTrue(kGValueInput.value / 4.608, toUnitKg);
+        break;
+      case 2:
+        condationTrue(kGValueInput.value / 1000, toUnitKg);
+        break;
+      case 3:
+        condationTrue(kGValueInput.value / 1000000, toUnitKg);
+        break;
+    }
   }
-  if (fromUnitKG.value == 0 && toUnitKg.value == 2) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value / 1000 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  if (fromUnitKG.value == 1) {
+    switch (Number(toUnitKg.value)) {
+      case 0:
+        condationTrue(kGValueInput.value * 4.608, toUnitKg);
+        break;
+      case 2:
+        condationTrue(kGValueInput.value / 217.0138888888889, toUnitKg);
+        break;
+      case 3:
+        condationTrue(kGValueInput.value / 217013.8888888889, toUnitKg);
+        break;
+    }
   }
-  if (fromUnitKG.value == 0 && toUnitKg.value == 3) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value / 1000000 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  if (fromUnitKG.value == 2) {
+    switch (Number(toUnitKg.value)) {
+      case 0:
+        condationTrue(kGValueInput.value * 1000, toUnitKg);
+        break;
+      case 1:
+        condationTrue(kGValueInput.value * 217.0138888888889, toUnitKg);
+        break;
+      case 3:
+        condationTrue(kGValueInput.value / 1000, toUnitKg);
+        break;
+    }
   }
-  if (fromUnitKG.value == 1 && toUnitKg.value == 0) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value * 4.608 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 1 && toUnitKg.value == 2) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value / 217.0138888888889 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 1 && toUnitKg.value == 3) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value / 217013.8888888889 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 2 && toUnitKg.value == 0) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value * 1000 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 2 && toUnitKg.value == 1) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value * 217.0138888888889 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 2 && toUnitKg.value == 3) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value / 1000 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 3 && toUnitKg.value == 0) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value * 1000000 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 3 && toUnitKg.value == 1) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value * 217013.8888888889 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
-  }
-  if (fromUnitKG.value == 3 && toUnitKg.value == 2) {
-    answerUnitText.classList.add("active");
-    answerUnitText.querySelector("span").textContent =
-      kGValueInput.value * 1000 +
-      ` ${toUnitKg.children[toUnitKg.value].textContent}`;
+  if (fromUnitKG.value == 3) {
+    switch (Number(toUnitKg.value)) {
+      case 0:
+        condationTrue(kGValueInput.value * 1000000, toUnitKg);
+        break;
+      case 1:
+        condationTrue(kGValueInput.value * 217013.8888888889, toUnitKg);
+        break;
+      case 2:
+        condationTrue(kGValueInput.value * 1000, toUnitKg);
+        break;
+    }
   }
 });
